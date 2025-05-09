@@ -6,16 +6,21 @@
 #    By: adrgutie <adrgutie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/01 15:00:40 by adrgutie          #+#    #+#              #
-#    Updated: 2025/05/07 16:20:16 by adrgutie         ###   ########.fr        #
+#    Updated: 2025/05/09 22:20:51 by adrgutie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= ex02
 CXX			= c++
 RM			= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= m
+SRCS		=	main.cpp \
+				AForm.cpp \
+				Bureaucrat.cpp \
+				PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp \
+				ShrubberyCreationForm.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
