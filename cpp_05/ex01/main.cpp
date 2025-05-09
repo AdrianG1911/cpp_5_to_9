@@ -1,10 +1,14 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
 	try
 	{
-		Bureaucrat steve("Steve", 0);
+		Bureaucrat steve("Steve", 75);
+		Form form("form", 60, 75);
+		std::cout << form << "\n";
+		steve.signForm(form);
 	}
 	catch(const std::exception& e)
 	{
@@ -12,12 +16,7 @@ int	main()
 	}
 	try
 	{
-		Bureaucrat sato("Sato", 2);
-		Bureaucrat sato2 = sato;
-		std::cout << sato2 << "\n";
-		sato.increment();
-		std::cout << sato << "\n";
-		sato.increment();
+		Form form("wow", 1, 0);
 	}
 	catch(const std::exception& e)
 	{
@@ -26,11 +25,10 @@ int	main()
 	try
 	{
 		Bureaucrat bobo("Bobo", 75);
-		std::cout << bobo << "\n";
-		Bureaucrat lobo("Lobo", 150);
-		bobo = lobo;
-		std::cout << bobo << "\n";
-		bobo.decrement();
+		Form form("new form", 100, 90);
+		std::cout << form << "\n";
+		bobo.signForm(form);
+		std::cout << form << "\n";
 	}
 	catch(const std::exception& e)
 	{
