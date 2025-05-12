@@ -3,7 +3,9 @@
 #include <cstdlib>
 #include "ScalarConverter.hpp"
 
-int main()
+int main(int argc, char *argv[])
 {
-	char c = '\0';
+	if (argc != 2)
+		return (0);
+	ScalarConverter::convert(argv[1]);
 }
