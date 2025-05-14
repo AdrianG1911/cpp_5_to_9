@@ -5,7 +5,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <typeinfo>
 
 Base * generate(void)
 {
@@ -52,21 +51,21 @@ void identify(Base& p)
 		(void)a;
 		std::cout << "A\n";
 	}
-	catch(const std::bad_cast& e){}
+	catch(const std::exception& e){}
 		try
 	{
 		B& b = dynamic_cast<B&>(p);
 		(void)b;
 		std::cout << "B\n";
 	}
-	catch(const std::bad_cast& e){}
+	catch(const std::exception& e){}
 		try
 	{
 		C& c = dynamic_cast<C&>(p);
 		(void)c;
 		std::cout << "C\n";
 	}
-	catch(const std::bad_cast& e){}
+	catch(const std::exception& e){}
 }
 
 int main()
