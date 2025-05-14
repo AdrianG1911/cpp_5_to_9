@@ -3,14 +3,14 @@
 #include <cstdlib>
 #include "ScalarConverter.hpp"
 
-bool ft_isprintable(long c)
+bool ftIsprintable(long c)
 {
 	if (c < 32 || c > 126)
 		return (false);
 	return (true);
 }
 
-void	convert_char(const std::string& str)
+void	convertChar(const std::string& str)
 {
 	int 	len = str.length();
 	long	c;
@@ -21,7 +21,7 @@ void	convert_char(const std::string& str)
 	std::cout << "char: ";
 	if (c > 127 || c < 0)
 		std::cout << "impossible\n";
-	else if (ft_isprintable(c) == true)
+	else if (ftIsprintable(c) == true)
 		std::cout << static_cast<char>(c) << "\n";
 	else
 		std::cout  << "non displayable\n";
@@ -30,7 +30,7 @@ void	convert_char(const std::string& str)
 	std::cout << "double: " << static_cast<double>(c) << "\n"; 
 }
 
-void	convert_int(const std::string &str)
+void	convertInt(const std::string &str)
 {
 	long	i;
 
@@ -38,7 +38,7 @@ void	convert_int(const std::string &str)
 	std::cout << "char: ";
 	if (i > 127 || i < 0)
 		std::cout << "impossible\n";
-	else if (ft_isprintable(i) == true)
+	else if (ftIsprintable(i) == true)
 		std::cout << static_cast<char>(i) << "\n";
 	else
 		std::cout  << "non displayable\n";
@@ -51,7 +51,7 @@ void	convert_int(const std::string &str)
 	std::cout << "double: " << static_cast<double>(i) << "\n";
 }
 
-void convert_float(const std::string &str)
+void convertFloat(const std::string &str)
 {
 	double bf;
 	float f;
@@ -64,7 +64,7 @@ void convert_float(const std::string &str)
 	std::cout << "char: ";
 	if (fl > 127 || fl < 0)
 		std::cout << "impossible\n";
-	else if (ft_isprintable(fl) == true)
+	else if (ftIsprintable(fl) == true)
 		std::cout << static_cast<char>(fl) << "\n";
 	else
 		std::cout  << "non displayable\n";
@@ -86,7 +86,7 @@ void convert_float(const std::string &str)
 }
 
 
-void convert_double(const std::string &str)
+void convertDouble(const std::string &str)
 {
 	double db;
 	float f;
@@ -98,7 +98,7 @@ void convert_double(const std::string &str)
 	std::cout << "char: ";
 	if (l > 127 || l < 0)
 		std::cout << "impossible\n";
-	else if (ft_isprintable(l) == true)
+	else if (ftIsprintable(l) == true)
 		std::cout << static_cast<char>(l) << "\n";
 	else
 		std::cout  << "non displayable\n";
@@ -119,7 +119,7 @@ void convert_double(const std::string &str)
 		std::cout << db << "\n";
 }
 
-void	convert_special(const std::string &str)
+void	convertSpecial(const std::string &str)
 {
 	int	type;
 
@@ -162,7 +162,7 @@ void	convert_special(const std::string &str)
 	std::cout << "\n";
 }
 
-int	get_type(const std::string& str)
+int	getType(const std::string& str)
 {
 	if (str == "-inff" || str == "+inff" || str == "nanf") return SPECIAL;
     if (str == "-inf" || str == "+inf" || str == "nan") return SPECIAL;

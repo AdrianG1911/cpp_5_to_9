@@ -31,12 +31,12 @@ public:
 
 };
 
-bool ft_isprintable(long c);
-void convert_char(const std::string &str);
-void convert_int(const std::string &str);
-void convert_float(const std::string &str);
-void convert_double(const std::string &str);
-void convert_special(const std::string &str);
-int	get_type(const std::string& str);
+bool ftIsprintable(long c);
+void convertChar(const std::string &str);
+void convertInt(const std::string &str);
+void convertFloat(const std::string &str);
+void convertDouble(const std::string &str);
+void convertSpecial(const std::string &str);
+int	getType(const std::string& str);
 
 #endif // SCALARCONVERTER_HPP
