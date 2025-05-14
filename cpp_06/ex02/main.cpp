@@ -48,19 +48,22 @@ void identify(Base& p)
 	std::cout << "type is: ";
 	try
 	{
-		dynamic_cast<A&>(p);
+		A& a = dynamic_cast<A&>(p);
+		(void)a;
 		std::cout << "A\n";
 	}
 	catch(const std::bad_cast& e){}
 		try
 	{
-		dynamic_cast<B&>(p);
+		B& b = dynamic_cast<B&>(p);
+		(void)b;
 		std::cout << "B\n";
 	}
 	catch(const std::bad_cast& e){}
 		try
 	{
-		dynamic_cast<C&>(p);
+		C& c = dynamic_cast<C&>(p);
+		(void)c;
 		std::cout << "C\n";
 	}
 	catch(const std::bad_cast& e){}
