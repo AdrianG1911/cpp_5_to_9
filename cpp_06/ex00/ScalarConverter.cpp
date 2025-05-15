@@ -18,7 +18,7 @@ ScalarConverter::~ScalarConverter() {
 
 void ScalarConverter::convert(const std::string &str)
 {
-    int type = get_type(str);
+    int type = getType(str);
 
     switch (type)
     {
@@ -26,19 +26,19 @@ void ScalarConverter::convert(const std::string &str)
             std::cout << "Invalide input\n";
             break ;
         case CHAR:
-            convert_char(str);
+            convertChar(str);
             break ;
         case INT:
-            convert_int(str);
+            convertInt(str);
             break ;
         case FLOAT:
-            convert_float(str);
+            convertFloat(str);
             break ;
         case DOUBLE:
-            convert_double(str);
+            convertDouble(str);
             break ;
         case SPECIAL:
-            convert_special(str);
+            convertSpecial(str);
             break ;
     }
 }

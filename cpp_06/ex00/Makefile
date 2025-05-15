@@ -6,7 +6,7 @@
 #    By: adrgutie <adrgutie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/01 15:00:40 by adrgutie          #+#    #+#              #
-#    Updated: 2025/05/10 22:39:58 by adrgutie         ###   ########.fr        #
+#    Updated: 2025/05/14 14:03:54 by adrgutie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
 				ScalarConverter.cpp \
-				other_funcs.cpp
+				otherFuncs.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
