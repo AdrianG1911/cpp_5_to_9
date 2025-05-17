@@ -27,10 +27,4 @@ T max(T& a, T& b)
 	return (a);
 }
 
-// template <typename T>
-// std::ostream& operator<<(std::ostream& o, T t)
-// {
-// 	o << t;
-// 	return (o);
-// }
 #endif

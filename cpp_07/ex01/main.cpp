@@ -1,14 +1,14 @@
 #include <iostream>
 #include "iter.hpp"
 
-template <typename ting>
-void print_ting(const ting& thing)
+template <typename T>
+void printTing(const T& thing)
 {
     std::cout << thing << "\n";
 }
 
-template <typename ting>
-void mulitply_two(ting& thing)
+template <typename T>
+void multiplyTwo(T& thing)
 {
     thing *= 2;
 }
@@ -22,16 +22,16 @@ int main()
     for (long i = 0; i < 5; ++i)
         arr2ptr[i] += i + 6;
     std::cout << "int array: \n";
-    ::iter(arrptr, 5, print_ting<int>);
+    ::iter(arrptr, 5, printTing<int>);
     std::cout << "long array: \n";
-    ::iter(arr2ptr, 5, print_ting<long>);
-    ::iter(arrptr, 5, mulitply_two<int>);
-    ::iter(arr2ptr, 5, mulitply_two<long>);
+    ::iter(arr2ptr, 5, printTing<long>);
+    ::iter(arrptr, 5, multiplyTwo<int>);
+    ::iter(arr2ptr, 5, multiplyTwo<long>);
     std::cout << "int array after multiply_two: \n";
-    ::iter(arrptr, 5, print_ting<int>);
+    ::iter(arrptr, 5, printTing<int>);
     std::cout << "long array after multiply_two: \n";
-    ::iter(arr2ptr, 5, print_ting<long>);
+    ::iter(arr2ptr, 5, printTing<long>);
     std::cout << "char array でテストしてみよう！\n";
-    ::iter("Hello World", 11, print_ting<char>);
+    ::iter("Hello World", 11, printTing<char>);
     delete arr2ptr;
 }
