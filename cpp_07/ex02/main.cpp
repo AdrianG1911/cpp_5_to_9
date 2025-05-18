@@ -65,9 +65,9 @@ int main(int, char**)
     empty = complex[1];
     std::cout << empty[0] << "\n";
 
-    // int *arrr = new int[5]();
-    // for (int i = 0; i < 5; i++)
-    //     std::cout << arrr[i] << std::endl;
+    Array<int> arrr(5);
+    for (int i = 0; i < 5; i++)
+        std::cout << arrr[i] << std::endl;
     Array<int> copytest(4);
     for (size_t i = 0; i < 4; i++)
         copytest[i] = i;
@@ -80,7 +80,7 @@ int main(int, char**)
     for (size_t i = 0; i < 4; i++)
         std::cout << " " << ct2[i]; 
     std::cout << std::endl;
-    Array<int> ct3;
+    Array<int> ct3(10);
     ct3 = copytest;
     std::cout << "ct3" << std::endl;
     for (size_t i = 0; i < 4; i++)
