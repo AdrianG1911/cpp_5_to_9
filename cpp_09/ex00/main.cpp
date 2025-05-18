@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
-		return 1;
+		return (std::cerr << "wrong number of arguments\n", 1);
 	BitcoinExchange bte;
 	std::ifstream input(argv[1]);
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	std::getline(input, line);
 	if (line != "date | value")
 	{
-		std::cout << line << std::endl;
+		std::cerr << line << std::endl;
 		std::cerr << "invalid input file" << std::endl;
 		return 1;
 	}
