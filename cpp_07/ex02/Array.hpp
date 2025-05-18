@@ -13,13 +13,13 @@ public:
 	Array() : _arr(NULL), _len(0) {};
 	Array(unsigned int _len) : _len(_len)
 	{
-		_arr = new T[_len];
+		_arr = new T[_len]();
 	}
 	Array(const Array& other) : _len(other._len)
 	{
 		_arr = new T[_len];
 		for (unsigned int i = 0; i < _len; ++i)
-		_arr[i] = other._arr[i];
+			_arr[i] = other._arr[i];
 	}
 	Array& operator=(const Array& other)
 	{

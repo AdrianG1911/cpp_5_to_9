@@ -64,5 +64,40 @@ int main(int, char**)
     Array<int> empty;
     empty = complex[1];
     std::cout << empty[0] << "\n";
+
+    // int *arrr = new int[5]();
+    // for (int i = 0; i < 5; i++)
+    //     std::cout << arrr[i] << std::endl;
+    Array<int> copytest(4);
+    for (size_t i = 0; i < 4; i++)
+        copytest[i] = i;
+    std::cout << "copytest" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << copytest[i]; 
+    std::cout << std::endl;
+    Array<int> ct2(copytest);
+    std::cout << "ct2" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << ct2[i]; 
+    std::cout << std::endl;
+    Array<int> ct3;
+    ct3 = copytest;
+    std::cout << "ct3" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << ct3[i]; 
+    std::cout << std::endl;
+    copytest[1] = 9;
+    std::cout << "copytest" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << copytest[i]; 
+    std::cout << std::endl;
+    std::cout << "ct2" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << ct2[i]; 
+    std::cout << std::endl;
+    std::cout << "ct3" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        std::cout << " " << ct3[i]; 
+    std::cout << std::endl;
     return 0;
 }
