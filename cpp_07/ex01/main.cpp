@@ -33,5 +33,5 @@ int main()
     ::iter(arr2ptr, 5, printTing<long>);
     std::cout << "char array でテストしてみよう！\n";
     ::iter("Hello World", 11, printTing<char>);
-    delete arr2ptr;
+    delete [] arr2ptr;
 }
