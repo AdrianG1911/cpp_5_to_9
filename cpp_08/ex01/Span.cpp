@@ -41,9 +41,7 @@ unsigned int Span::shortestSpan() const
 	unsigned int shortSpan = UINT_MAX;
 	for (size_t i = 0; i < arrCopy.size() - 1; ++i)
 	{
-		long big = std::max(arrCopy[i], arrCopy[i + 1]);
-		long small = std::min(arrCopy[i], arrCopy[i + 1]);
-		unsigned int check = (unsigned int)(big - small);
+		unsigned int check = (unsigned int)((long)arrCopy[i + 1] - (long)arrCopy[i]);
 		shortSpan = std::min(shortSpan, check);
 	}
 	return (shortSpan);

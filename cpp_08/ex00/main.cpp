@@ -16,9 +16,9 @@ int main() {
     vec.push_back(3);
 
     std::cout << "Searching for 3 in vector: " << easyfind(vec, 3) << std::endl;
-    std::cout << "Searching for 100 (not found) in vector: " << easyfind(vec, 100) << std::endl;
+    std::cout << "Searching for 100 in vector: " << easyfind(vec, 100) << std::endl;
 
-    std::vector<int> empty_vec; // This is fine
+    std::vector<int> empty_vec;
     std::cout << "Searching for 10 in empty vector: " << easyfind(empty_vec, 10) << std::endl;
 
 
