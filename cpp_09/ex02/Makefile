@@ -10,12 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= PmergMe
 CXX			= c++
 RM			= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= m
+SRCS		=	main.cpp
+				PmergMe.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

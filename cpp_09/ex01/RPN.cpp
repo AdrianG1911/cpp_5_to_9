@@ -1,4 +1,4 @@
-#include <deque>
+#include <stack>
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -7,10 +7,18 @@
 #define SIGN 0
 #define NUM 1
 
-
-std::deque<int>	setup_rpn(char *argv[])
+void pushPop(std::stack<int>& toEmpty, std::stack<int>& toFill)
 {
-	std::deque<int> deq;
+	while (toEmpty.size() > 0)
+	{
+		toFill.push(toEmpty.top());
+		toEmpty.pop();
+	}
+}
+
+std::stack<int>	setup_rpn(char *argv[])
+{
+	std::stack<int> deq;
 	std::string str = argv[1];
 	for (size_t i = 0; i < str.length() ; i += 2)
 	{
@@ -21,13 +29,13 @@ std::deque<int>	setup_rpn(char *argv[])
 		}
 		if (std::isdigit(str[i]) == true)
 		{
-			deq.push_back(NUM);
-			deq.push_back(str[i] - '0');
+			deq.push(NUM);
+			deq.push(str[i] - '0');
 		}
 		else if (std::strchr("+*/-", str[i]))
 		{
-			deq.push_back(SIGN);
-			deq.push_back(str[i]);
+			deq.push(SIGN);
+			deq.push(str[i]);
 		}
 		else
 		{
@@ -35,8 +43,12 @@ std::deque<int>	setup_rpn(char *argv[])
 			throw std::exception();
 		}
 	}
-	return (deq);
+	std::stack<int> sta;
+	pushPop(deq, sta);
+	return (sta);
 }
+
+
 
 int	do_thing(int a, int b, int c)
 {
@@ -71,32 +83,57 @@ int	do_thing(int a, int b, int c)
 
 int	rpn(char *argv[])
 {
-	std::deque<int> deq = setup_rpn(argv);
+	std::stack<int> deq = setup_rpn(argv);
+	std::stack<int> store;
 	while (deq.size() > 4)
 	{
-		std::deque<int>::iterator it = deq.begin();	
-		if (*it != NUM || *(it + 2) != NUM)
+		int num1;
+		int num2;
+		int sign;
+		if (deq.top() != NUM)
 		{
 			std::cerr << "wrong amount of numbers and signs" << std::endl;
 			throw std::exception();
 		}
-		while ((it + 4) != deq.end() && *(it + 4) != SIGN)
-			it += 2;
-		if ((it + 4) == deq.end()) 
+		store.push(deq.top());
+		deq.pop();
+		store.push(deq.top());
+		deq.pop();
+		if (deq.top() != NUM)
 		{
 			std::cerr << "wrong amount of numbers and signs" << std::endl;
 			throw std::exception();
 		}
-		int	rez = do_thing(*(it + 1), *(it + 3), *(it + 5));
-	
-		it = deq.erase(it + 2, it + 6);
-		it -= 2;
-		*(it + 1) = rez;
+		store.push(deq.top());
+		deq.pop();
+		store.push(deq.top());
+		deq.pop();
+		while (deq.size() != 0 && deq.top() != SIGN)
+		{
+			store.push(deq.top());
+			deq.pop();
+		}
+		if (deq.size() == 0) 
+		{
+			std::cerr << "wrong amount of numbers and signs" << std::endl;
+			throw std::exception();
+		}
+		deq.pop();
+		sign = deq.top();
+		deq.pop();
+		num2 = store.top();
+		store.pop();
+		store.pop();
+		num1 = store.top();
+		store.pop();
+		int	rez = do_thing(num1, num2, sign);
+		store.push(rez);
+		pushPop(store, deq);
 	}
 	if (deq.size() >= 4)
 	{
 		std::cerr << "wrong amount of numbers and signs" << std::endl;
 		throw std::exception();
 	}
-	return (deq[1]);
+	return (deq.pop(), deq.top());
 }
