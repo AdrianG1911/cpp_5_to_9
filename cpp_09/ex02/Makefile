@@ -6,17 +6,17 @@
 #    By: adrgutie <adrgutie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/01 15:00:40 by adrgutie          #+#    #+#              #
-#    Updated: 2025/05/07 16:20:16 by adrgutie         ###   ########.fr        #
+#    Updated: 2025/05/21 14:59:55 by adrgutie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= PmergMe
+NAME		= PmergeMe
 CXX			= c++
 RM			= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRCS		=	main.cpp
-				PmergMe.cpp
+SRCS		=	main.cpp \
+				PmergeMe.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
