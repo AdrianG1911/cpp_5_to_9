@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	if (line != "date | value")
 	{
 		std::cerr << line << std::endl;
-		std::cerr << "invalid input file" << std::endl;
+		std::cerr << " invalid input file" << std::endl;
 		return 1;
 	}
 	while (std::getline(input, line))
