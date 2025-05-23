@@ -4,7 +4,7 @@ Span::Span() : _len(0), _arr(0)
 {
 }
 
-Span::Span(unsigned int len) : _len(len), _arr(0)
+Span::Span(unsigned int N) : _len(N), _arr(0)
 {
 }
 

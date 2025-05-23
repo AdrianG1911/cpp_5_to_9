@@ -13,8 +13,8 @@ int main( void ) {
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl << std::endl;
 
 	std::cout << "Complex type" << std::endl;
-	std::string c = "stringC";
-	std::string d = "stringD";
+	std::string c = "chaine2";
+	std::string d = "chaine1";
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	::swap(c, d);
 	std::cout << "c and d SWAPED!" << std::endl;

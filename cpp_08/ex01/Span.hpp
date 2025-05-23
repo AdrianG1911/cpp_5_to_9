@@ -15,7 +15,7 @@ private:
 	std::vector<int>		_arr;
 public:
 	Span();
-	Span(unsigned int len);
+	Span(unsigned int N);
 	Span(const Span& other);
 	Span& operator=(const Span&other);
 	~Span();

@@ -13,14 +13,14 @@ int main()
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 
-	std::cout << "\n== 10,000 elements ==" << std::endl;
+	std::cout << "\n== 1,000 elements ==" << std::endl;
 	srand(time(0));
 	std::vector<int> newvec;
-	for (int i = 0; i < 10000; ++i)
+	for (int i = 0; i < 1000; ++i)
 	{
 		newvec.push_back(rand());
 	}
-	Span nsp = Span(10000);
+	Span nsp = Span(1000);
 	nsp.addNumber(newvec.begin(), newvec.end());
 	std::cout << "shortestspan: " << nsp.shortestSpan() << std::endl;
 	std::cout << "longestspan: " << nsp.longestSpan() << std::endl;
