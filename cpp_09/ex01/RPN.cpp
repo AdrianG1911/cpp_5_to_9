@@ -20,14 +20,14 @@ std::stack<int>	setup_rpn(char *argv[])
 {
 	std::stack<int> deq;
 	std::string str = argv[1];
-	for (size_t i = 0; i < str.length() ; i += 2)
+	for (unsigned long i = 0; i < str.length() ; i += 2)
 	{
-		if (str[i + 1] != '\0' && str[i + 1] != ' ')
+		if ((str[i] == ' ' || str[i] == '\0') || (str[i + 1] != '\0' && str[i + 1] != ' '))
 		{
 			std::cerr << "invalid input" << std::endl;
 			throw std::exception();
 		}
-		if (std::isdigit(str[i]) == true)
+		else if (std::isdigit(str[i]) != 0)
 		{
 			deq.push(NUM);
 			deq.push(str[i] - '0');
